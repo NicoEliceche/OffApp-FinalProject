@@ -1,2 +1,2 @@
 # OffApp-FinalProject
-Proyecto final Comunidad IT - Desarrollo de Aplicaciones Multiplataformas en Java
+Final project: Comunidad IT : Multiplatform Application Development in Java language.
