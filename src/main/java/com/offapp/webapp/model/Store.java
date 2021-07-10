@@ -18,15 +18,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Store {
+public class Store{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-	
 	private String name;
 	private String address;
 	private String contact;
 	private Boolean enabled;
+	private Integer lat;
+	private Integer len;
 	
 	@OneToMany
 	List<Category> category = new ArrayList<Category>();
@@ -35,15 +36,20 @@ public class Store {
 	List<Store> stores = new ArrayList<Store>();
 	
 	@OneToMany
-	List<Location> location = new ArrayList<Location>();
+	List<Offer> offer = new ArrayList<Offer>();
 
-//	public Object addLocation (int x, int y) {
-//		int [][] businessLoc = new int [1][1];
-//		for (int i = 0; i < businessLoc.length; i++) {
-//			for (int j = 0; j < businessLoc.length; j++) {
-//				businessLoc[j] = y;
-//			}
-//		}
-//		return null;
-//	}
+	public String getAddress() {		
+		StringBuilder sb = new StringBuilder();
+		sb.append("Latitude: " + this.getLat() + "\n");
+		sb.append("Length: " + this.getLen());
+		this.address = sb.toString();
+		return address;
+	}
+	
+	public void setAddress(Integer lat, Integer len) {
+		this.lat = lat;
+		this.len = len;
+		System.out.println("Se ha establecido la ubicación para: " + this.getName());
+	}
+	
 }

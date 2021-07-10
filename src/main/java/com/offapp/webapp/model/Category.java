@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public abstract class Category {
+public class Category {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)

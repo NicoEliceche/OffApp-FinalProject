@@ -1,0 +1,137 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+
+header {
+  background-color: #ffffff;
+}
+
+header .logo {
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  height: 20vh;
+  width: 20vw;
+}
+
+header nav {
+  font-family: arial;
+  font-size: 20px;
+  text-transform: uppercase;
+  background-color: #000000;
+}
+
+/*.fixed {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+}*/
+
+.dropdown-menu {
+  background-color: black;
+}
+
+hr {
+  color: #ffff00;
+}
+
+label {
+  color: #ffff00;
+}
+
+.nav-item a {
+  color: #ffff00;
+}
+
+#navbarDropdown img {
+  width: 28px;
+  height: 30px;
+}
+
+.dropdown-menu {
+  width: 20vw;
+}
+
+.dropHover {
+  display: none;
+}
+
+.dropHover:hover {
+  display: relative;
+  right: -50px;
+}
+
+#searchPlace {
+  width: 28%;
+  padding-right: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+#sP1 {
+  width: 90%;
+}
+
+#sP2 {
+  width: 10%;
+  text-align: right;
+}
+
+#searchBar {
+  height: 100%;
+  width: 100%;
+}
+
+form button {
+  padding: 5px 10px 5px 10px;
+  background-color: black;
+}
+
+form button img {
+  height: 20px;
+  width: 20px;
+}
+
+#navPlace {
+  padding-left: 0px;
+  width: 80%;
+}
+
+.itemBar {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+footer {
+  background-color: black;
+  padding: 2vh 2vw 0px 2vw;
+  margin: 20vh 0px 0px 0px;
+}
+
+.nav-link:hover {
+  color: #fff;
+  border: 5px;
+  border-color: #ffff00;
+  transition: all .3s;
+}
+
+.nav-link:active {
+  color: white;
+}
+
+input {
+  border-width: 0px;
+}
+
+.offersSector {
+	background-color: rgb(157, 157, 157);
+	margin: auto;
+	padding: 5px;
+}

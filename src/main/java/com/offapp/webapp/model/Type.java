@@ -17,16 +17,12 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public abstract class Type implements Serializable{
-	
 	private static final long serialVersionUID = 1L;
 	private static final String TYPE = "Type";
 		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	public String getTipo() {
-		return TYPE;
-	}
+	private String name;
 	
 }

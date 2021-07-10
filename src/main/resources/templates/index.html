@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OffApp</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet/styles.css">
+  </head>
+  <body id="content">
+    <header>
+      <div class="logo">
+        <img src="img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navPlace" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown itemBar">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="img/deployable-yellow.png" name="Menu"/>
+                </a>
+                <ul class="dropdown-menu">
+                  <form action="/action_page.php">
+                    <input type="radio" id="locat1" name="locat" value="selfLocation">
+                    <label for="locat1">Usar mi ubicación</label><br>
+                    <input type="radio" id="locat2" name="locat" value="selectLocation">
+                    <label for="locat2">Elegir ubicación</label>
+                  </form>
+                  <li><hr></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Almacén
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">Arroz</a></li>
+                      <li><a class="dropdown-item" href="#">Fideos</a></li>
+                      <li><a class="dropdown-item" href="#">Aceite</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Verdulería
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">Manzana</a></li>
+                      <li><a class="dropdown-item" href="#">Banana</a></li>
+                      <li><a class="dropdown-item" href="#">Naranja</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ferretería
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">Martillos</a></li>
+                      <li><a class="dropdown-item" href="#">Destornilladores</a></li>
+                      <li><a class="dropdown-item" href="#">Cintas Métricas</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Carnicería
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">Cortes de carne</a></li>
+                      <li><a class="dropdown-item" href="#">Chorizos</a></li>
+                      <li><a class="dropdown-item" href="#">Milanesas</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Artículos de Limpieza
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">Lavandina</a></li>
+                      <li><a class="dropdown-item" href="#">Cloro</a></li>
+                      <li><a class="dropdown-item" href="#">Desodorantes de piso</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NextAdded
+                    </a>
+                    <ul class="dropHover">
+                      <li><a class="dropdown-item" href="#">NextAdded</a></li>
+                      <li><a class="dropdown-item" href="#">NextAdded</a></li>
+                      <li><a class="dropdown-item" href="#">NextAdded</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/friend_businesses}">Comercios amigos</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/create_your_alert}">Crea tu alerta</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/contact}">Contacto</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/social_media}">Redes sociales</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/about_us}">Nosotros</a>
+              </li>
+            </ul>
+            <form id="searchPlace">
+              <div id="sP1">
+                <input id ="searchBar" type="search" placeholder="Buscar..." >
+              </div>
+              <div id="sP2">
+                <button type="submit"><img src="img/search-yellow.png"/></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section class="offSector">
+    	<h2>Crear nueva oferta</h2>
+    	<form th:action="@{}" method="post" th:object=${offer}>
+<!--     		<input type="text" id="name" name="name" placeholder="Instert name..." th:field="*{name}"><br> -->
+<!--     		<label for="name">Name:</label> -->
+<!--     		<input type="text" id="description" name="description" placeholder="Insert description..." th:field="*{description}"><br> -->
+<!--     		<label for="name">Description:</label> -->
+<!--     		<input type="text" id="cost" name="cost" placeholder="Insert cost..." th:field="*{cost}"><br> -->
+<!--     		<label for="name">Cost:</label> -->
+    		<button type="submit">Crear</button>
+       	</form>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <footer class="fixed-bottom">
+
+    </footer>
+  </body>
+</html>

@@ -1,20 +1,23 @@
 package com.offapp.webapp;
 
-import com.offapp.webapp.model.Location;
 import com.offapp.webapp.model.Store;
 
 public class MainApp {
 
 	public static void main(String[] args) {
-		Location l = new Location();
-		l.setLat(234.54);
-		l.setLen(345.21);
+		Store kiosc1 = new Store();
+		kiosc1.setName("Lo de Nico");
+		kiosc1.setAddress(25, 38);
 		
-		Store kiosk = new Store();
-		kiosk.setName("Niosco");
+		Store fer = new Store();
+		fer.setName("Agrofer");
+		fer.setAddress(22, 33);
 		
-		System.out.println(l.getLocation(kiosk.getName()));
+		Store fiam = new Store();
+		fiam.setName("Fiambres Juan");
+		fiam.setAddress(52, 12);
 		
+		System.out.println("Localidades: \n" + kiosc1.getAddress() + "\n" + fer.getAddress() + "\n" +  fiam.getAddress());
 	}
 
 }

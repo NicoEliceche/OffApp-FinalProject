@@ -1,5 +1,7 @@
 package com.offapp.webapp.model;
 
+import java.io.Serializable;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,11 +17,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Product extends Type {
+public class Product extends Type implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	private static final String TIPO = "Product";
 	
-	private String name;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private Long id;
 
 }
