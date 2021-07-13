@@ -11,14 +11,20 @@ import com.offapp.webapp.repository.OfferRepository;
 @Service
 public class OfferService {
 
-private OfferRepository offerRepository;
-	
+private final OfferRepository offerRepository;
+
+
 	@Autowired
 	public OfferService(OfferRepository offerRepository) {
 		this.offerRepository = offerRepository;
 	}
 	
+	public Offer save(Offer offer) {
+		return offerRepository.saveAndFlush(offer);
+	}
+	
 	public List<Offer> listOffers() {
 		return offerRepository.findAll();
 	}
+	
 }

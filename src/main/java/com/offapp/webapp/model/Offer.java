@@ -3,6 +3,7 @@ package com.offapp.webapp.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -26,11 +27,11 @@ public class Offer implements Serializable{
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String author;
 	private String description;
-	private BigDecimal enabled;
-	private BigDecimal cost;
-	private BigDecimal offPercentage;
+	private BigDecimal offPrice;
+	private BigDecimal origPrice;
+	private Boolean enabled = Boolean.TRUE;
 
 	@OneToMany
 	List<Offer> offers = new ArrayList<Offer>();

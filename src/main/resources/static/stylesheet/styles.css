@@ -68,7 +68,7 @@ label {
 }
 
 #searchPlace {
-  width: 28%;
+  width: 15%;
   padding-right: 0px;
   display: flex;
   flex-direction: row;
@@ -100,7 +100,7 @@ form button img {
 
 #navPlace {
   padding-left: 0px;
-  width: 80%;
+  width: 85%;
 }
 
 .itemBar {
@@ -149,7 +149,7 @@ input {
 .hSec1Prod {
 	height: 100%;
 	width: 100%;
-	box-shadow: 0px 5px 26px 8px rgba(0,0,0,0.6);
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 	margin: 10px 10px 10px 10px
 }
 
@@ -169,7 +169,7 @@ input {
 .sub1 {
 	height: 100%;
 	width: 100%;
-	box-shadow: 0px 5px 26px 8px rgba(0,0,0,0.6);
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 	margin: 10px 10px 10px 10px
 }
 
@@ -182,7 +182,7 @@ input {
 .sub2 {
 	height: 100%;
 	width: 100%;
-	box-shadow: 0px 5px 26px 8px rgba(0,0,0,0.6);
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 	margin: 10px 10px 10px 10px
 }
 
@@ -190,7 +190,7 @@ input {
 	height: 100%;
 	width: 33%;
 	margin: 0px 45px 0px 45px;
-	box-shadow: 0px 5px 26px 8px rgba(0,0,0,0.6);
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 }
 
 .offContainer {
@@ -215,7 +215,51 @@ input {
 	height: 100%;
 	width: 20%;
 	margin: 0px 45px 0px 45px;
-	box-shadow: 0px 5px 26px 8px rgba(0,0,0,0.6);
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	padding: 5px 15px 10px 5px;
+}
+
+.photoSec {
+	background-color: red;
+	height: 60%;
+	width: 100%;
+	margin: 5px;
+}
+
+.photoSec img {
+	height: 100%;
+	width: 100%;
+}
+
+.description {
+	background-color: blue;
+	height: 10%;
+	width: 100%;
+	margin: 5px;
+}
+
+.authorSec {
+	background-color: green;
+	height: 10%;
+	width: 100%;
+	margin: 5px;
+}
+
+.offPrice {
+	background-color: yellow;
+	height: 10%;
+	width: 100%;
+	margin: 5px;
+}
+
+.origPrice {
+	background-color: lightblue;
+	height: 10%;
+	width: 100%;
+	margin: 5px;
+	text-decoration: line-through;
 }
 
 footer {

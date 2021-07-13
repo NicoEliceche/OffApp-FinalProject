@@ -1,5 +1,6 @@
 package com.offapp.webapp;
 
+import com.offapp.webapp.model.Offer;
 import com.offapp.webapp.model.Store;
 
 public class MainApp {
@@ -18,6 +19,7 @@ public class MainApp {
 		fiam.setAddress(52, 12);
 		
 		System.out.println("Localidades: \n" + kiosc1.getAddress() + "\n" + fer.getAddress() + "\n" +  fiam.getAddress());
+		
 	}
 
 }
