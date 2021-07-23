@@ -1,0 +1,54 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+
+.forms {
+	padding: 0px 400px 0px 400px;	
+}
+
+h3 {
+	text-align: center;
+}
+
+form {
+	border: 2px solid #000000;
+	border-radius: 99px 99px 99px 99px;
+	text-align: center;
+	font-family: arial;
+	font-size: 20px;
+	font-weight: 900;
+	padding-bottom: 15px;
+}
+
+input {
+	width: 80%;
+}
+
+.checkInput1 {
+	width: 15px;
+	height: 15px;
+	position: relative;
+	top: 1px;
+}
+
+.checkInput2 {
+	width: 15px;
+	height: 15px;
+	position: relative;
+	top: 1px;
+	left: 5px;
+}
+
+hr {
+	border: 2px solid #000000;
+}
+
+button {
+	border: 1px solid #000;
+	border-radius: 10px 10px 10px 10px;
+	position: relative;
+	top: 15px;
+	margin-bottom: 12px;
+}

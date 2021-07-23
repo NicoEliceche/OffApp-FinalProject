@@ -24,25 +24,270 @@
     <meta name="theme-color" content="#ffffff">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheet/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/styles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/offerstyles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/navstyles.css">
   </head>
   <body id="content">
-    <header>
-      <div class="logo">
-        <img src="img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
-      </div>
-    </header>
-    <h2>Crear nueva oferta</h2>
+    <header th:insert="navbar.html :: navbar"></header>
+    <div class="forms">
+    	<hr>
+	    <h3>Crear nueva oferta</h3>
+	    <hr>
+	    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+		    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{image}"><br>
+		    	</div>
+		    	<div class="authorPlace">
+		    		<label for="author">Autor:</label><br>
+		    		<input type="text" id="author" name="author" placeholder="Insertar autor..." th:field="*{author}"><br>
+		    	</div>
+		    	<div>
+		    		<label for="description">Descripción:</label><br>
+		    		<input type="text" id="description" name="description" placeholder="Insertar descripción..." th:field="*{description}"><br>
+		    	</div>
+		    	<div>
+		    		<label for="offPrice">Precio de oferta:</label><br>
+		    		<input type="text" id="offPrice" name="offPrice" placeholder="Instertar precio de oferta..." th:field="*{offPrice}"><br>
+		    	</div>
+		    	<div>
+		    		<label for="origPrice">Precio original:</label><br>
+		    		<input type="text" id="origPrice" name="origPrice" placeholder="Insertar precio original..." th:field="*{origPrice}"><br>
+		    	</div>
+		    	<div>
+		    		<button type="submit">Crear</button>
+		    	</div>
+	       	</form>
+	</div>
+    <hr>
+	<div class="forms">
+    <h3>Crear top 1 recomendado</h3>
+    <hr>
     	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
-    		<label for="author">Autor:</label>
-    		<input type="text" id="author" name="author" placeholder="Insertar autor..." th:field="*{author}"><br>
-    		<label for="description">Descripción:</label>
-    		<input type="text" id="description" name="description" placeholder="Insertar descripción..." th:field="*{description}"><br>
-    		<label for="offPrice">Precio de oferta:</label>
-    		<input type="text" id="offPrice" name="offPrice" placeholder="Instertar precio de oferta..." th:field="*{offPrice}"><br>
-    		<label for="origPrice">Precio original:</label>
-    		<input type="text" id="origPrice" name="origPrice" placeholder="Insertar precio original..." th:field="*{origPrice}"><br>
-    		<button type="submit">Crear</button>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageFirst}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorFirst">Autor:</label><br>
+	    		<input type="text" id="authorFirst" name="authorFirst" placeholder="Insertar autor..." th:field="*{authorFirst}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="descriptionFirst">Descripción:</label><br>
+	    		<input type="text" id="descriptionFirst" name="descriptionFirst" placeholder="Insertar descripción..." th:field="*{descriptionFirst}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceFirst">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceFirst" name="offPriceFirst" placeholder="Instertar precio de oferta..." th:field="*{offPriceFirst}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceFirst">Precio original:</label><br>
+	    		<input type="text" id="origPriceFirst" name="origPriceFirst" placeholder="Insertar precio original..." th:field="*{origPriceFirst}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
        	</form>
+    </div>
+    <hr>
+    <div class="forms">
+	<h3>Crear top 2-1 recomendado</h3>
+    <hr>
+    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageSecond1}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorSecond1">Autor:</label><br>
+	    		<input type="text" id="authorSecond1" name="authorSecond1" placeholder="Insertar autor..." th:field="*{authorSecond1}"><br>
+	    	</div>
+	    	<div>
+	    		<label  for="descriptionSecond1">Descripción:</label><br>
+	    		<input type="text" id="descriptionSecond1" name="descriptionSecond1" placeholder="Insertar descripción..." th:field="*{descriptionSecond1}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceSecond1">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceSecond1" name="offPriceSecond1" placeholder="Instertar precio de oferta..." th:field="*{offPriceSecond1}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceSecond1">Precio original:</label><br>
+	    		<input type="text" id="origPriceSecond1" name="origPriceSecond1" placeholder="Insertar precio original..." th:field="*{origPriceSecond1}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
+       	</form>
+    </div>
+    <hr>
+    <div class="forms">
+	<h3>Crear top 2-2 recomendado</h3>
+    <hr>
+    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageSecond2}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorSecond2">Autor:</label><br>
+	    		<input type="text" id="authorSecond2" name="authorSecond2" placeholder="Insertar autor..." th:field="*{authorSecond2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="descriptionSecond2">Descripción:</label><br>
+	    		<input type="text" id="descriptionSecond2" name="descriptionSecond2" placeholder="Insertar descripción..." th:field="*{descriptionSecond2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceSecond2">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceSecond2" name="offPriceSecond2" placeholder="Instertar precio de oferta..." th:field="*{offPriceSecond2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceSecond2">Precio original:</label><br>
+	    		<input type="text" id="origPriceSecond2" name="origPriceSecond2" placeholder="Insertar precio original..." th:field="*{origPriceSecond2}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
+       	</form>
+    </div>
+    <hr>
+    <div class="forms">
+	<h3>Crear top 3-1 recomendado</h3>
+    <hr>
+    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageThird1}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorThird1">Autor:</label><br>
+	    		<input type="text" id="authorThird1" name="authorThird1" placeholder="Insertar autor..." th:field="*{authorThird1}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="descriptionThird1">Descripción:</label><br>
+	    		<input type="text" id="descriptionThird1" name="descriptionThird1" placeholder="Insertar descripción..." th:field="*{descriptionThird1}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceThird1">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceThird1" name="offPriceThird1" placeholder="Instertar precio de oferta..." th:field="*{offPriceThird1}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceThird1">Precio original:</label><br>
+	    		<input type="text" id="origPriceThird1" name="origPriceThird1" placeholder="Insertar precio original..." th:field="*{origPriceThird1}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
+       	</form>
+    </div>
+    <hr>
+    <div class="forms">
+	<h3>Crear top 3-2 recomendado</h3>
+    <hr>
+    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageThird2}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorThird2">Autor:</label><br>
+	    		<input type="text" id="authorThird2" name="authorThird2" placeholder="Insertar autor..." th:field="*{authorThird2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="descriptionThird2">Descripción:</label><br>
+	    		<input type="text" id="descriptionThird2" name="descriptionThird2" placeholder="Insertar descripción..." th:field="*{descriptionThird2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceThird2">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceThird2" name="offPriceThird2" placeholder="Instertar precio de oferta..." th:field="*{offPriceThird2}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceThird2">Precio original:</label><br>
+	    		<input type="text" id="origPriceThird2" name="origPriceThird2" placeholder="Insertar precio original..." th:field="*{origPriceThird2}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
+       	</form>
+    </div>
+	<hr>
+	<div class="forms">
+	<h3>Crear top 3-3 recomendado</h3>
+    <hr>
+    	<form th:action="@{/offer/create}" method="post" th:object=${offer}>
+	    	<div class="typeSelector">
+		    		<label for="type">Tipo:</label><br>
+		    		<label for="type">Producto</label>
+		    		<input class="checkInput1" type="checkbox" if="type" name="type"><br>
+		    		<label for="type">Servicio</label>
+		    		<input class="checkInput2" type="checkbox" if="type" name="type"><br>
+		    	</div>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Insertar una imagen: </label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="file" name="files" multiple="" accept=".jpg,.jpeg,.png,.gif,.apng,.tiff,.tif" tabindex="11" th:field="*{imageThird3}"><br>
+	    	</div>
+	    	<div class="authorPlace">
+	    		<label for="authorThird3">Autor:</label><br>
+	    		<input type="text" id="authorThird3" name="authorThird3" placeholder="Insertar autor..." th:field="*{authorThird3}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="descriptionThird3">Descripción:</label><br>
+	    		<input type="text" id="descriptionThird3" name="descriptionThird3" placeholder="Insertar descripción..." th:field="*{descriptionThird3}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="offPriceThird3">Precio de oferta:</label><br>
+	    		<input type="text" id="offPriceThird3" name="offPriceThird3" placeholder="Instertar precio de oferta..." th:field="*{offPriceThird3}"><br>
+	    	</div>
+	    	<div>
+	    		<label for="origPriceThird3">Precio original:</label><br>
+	    		<input type="text" id="origPriceThird3" name="origPriceThird3" placeholder="Insertar precio original..." th:field="*{origPriceThird3}"><br>
+	    	</div>
+	    	<div>
+	    		<button type="submit">Crear</button>
+	    	</div>
+       	</form>
+	</div>
   </body>
 </html>

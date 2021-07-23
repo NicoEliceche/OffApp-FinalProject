@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AboutUs</title>
+    <title>OffApp</title>
 
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
@@ -23,84 +23,205 @@
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="stylesheet/styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link th:rel="stylesheet" th:href="@{/assets/select2-develop/dist/css/select2.css}"/>
+    <link th:rel="stylesheet" th:href="@{/assets/select2-bootstrap4-theme-master/dist/select2-bootstrap4.css}"/>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" type="text/css" href="/stylesheet/indexstyles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/navstyles.css">
   </head>
-  <header>
-    <div class="logo">
-      <img src="img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
-    </div>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul id="navPlace" class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown itemBar">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="img/deployable-yellow.png" name="Menu"/>
-              </a>
-              <ul class="dropdown-menu">
-                <form action="/action_page.php">
-                  <input type="radio" id="locat1" name="locat" value="selfLocation">
-                  <label for="locat1">Usar mi ubicación</label><br>
-                  <input type="radio" id="locat2" name="locat" value="selectLocation">
-                  <label for="locat2">Elegir ubicación</label>
-                </form>
-                <li><hr></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Almacén
-                  </a>
-                <ul class="dropHover">
-                  <li><a class="dropdown-item" href="#">Arroz</a></li>
-                  <li><a class="dropdown-item" href="#">Fideos</a></li>
-                  <li><a class="dropdown-item" href="#">Aceite</a></li>
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><a class="dropdown-item" href="#"></a></li>
-                  <li><a class="dropdown-item" href="#"></a></li>
+  <body>
+	<header th:insert="navbar.html :: navbar"></header>
+    <div class="content">
+	    <div class="menu-container">
+	    	<ul class="menu-list">
+                  <form id="navform" action="/action_page.php">
+                    <input type="radio" id="locat1" name="locat" value="selfLocation">
+                    <label class="navlabel" for="locat1">Usar mi ubicaci&oacute;n</label><br>
+                    <input type="radio" id="locat2" name="locat" value="selectLocation">
+                    <label class="navlabel" for="locat2">Elegir ubicaci&oacute;n</label>
+                  </form>
+                  <hr>
+                  <li>
+                    <a th:href="@{/offer/almacen}" id="itemDropdown">Almac&eacute;n
+                    </a>
+                  </li>
+                  <li >
+                    <a href="#" id="itemDropdown">Verduler&iacute;a
+                    </a>
+                  </li>
+                  <li >
+                    <a href="#" id="itemDropdown">Ferreter&iacute;a
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" id="itemDropdown">Carnicer&iacute;a
+                    </a>
+                  </li>
+                  <li>
+                    <a  href="#" id="itemDropdown">Art&iacute;culos de Limpieza
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">NextAdded
+                    </a>
+                  </li>
                 </ul>
-                </li>
-                <li><a class="dropdown-item" href="#">Verdulería</a></li>
-                <li><a class="dropdown-item" href="#">Ferretería</a></li>
-                <li><a class="dropdown-item" href="#">Carnicería</a></li>
-                <li><a class="dropdown-item" href="#">Artículos de Limpieza</a></li>
-                <li><a class="dropdown-item" href="#">NextAdded</a></li>
-              </ul>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link" th:href="@{/friend_businesses}">Comercios amigos</a>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link" th:href="@{/create_your_alert}">Crea tu alerta</a>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link" th:href="@{/contact}">Contacto</a>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link" th:href="@{/social_media}">Redes sociales</a>
-            </li>
-            <li class="nav-item itemBar">
-              <a class="nav-link" th:href="@{/about_us}">Nosotros</a>
-            </li>
-          </ul>
-          <form id="searchPlace">
-            <div id="sP1">
-              <input id ="searchBar" type="search" placeholder="Buscar..." aria-label="Search">
-            </div>
-            <div id="sP2">
-              <button type="submit"><img src="img/search-yellow.png"/></button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <body id="content">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
-    <footer id ="socialMedia">
-
+	    </div>
+	    <div class="offPlace">
+		    <section class="offHeader">
+		    	<section class="headerSection">
+		    		<section class="hSection1" th:each="offer: ${offers}">
+		    			<article class="hSec1Prod">
+		    				<div class="photoSec">
+				    			<p th:text="${imageFirst}">
+				    		</div>
+				    		<div class="description">
+			    				<p th:text="${descriptionFirst}"></p>
+				    		</div>
+				    		<div class="authorSec">
+				    			<p th:text="${authorFirst}"></p>
+				    		</div>
+				    		<div class="offPrice">
+				    			<p th:text="${offPriceFirst}"></p>
+				    			<img src="img/OffApp_LOGO.png">
+				    		</div>
+				    		<div class="origPrice">
+				    			<p class="" th:text="${origPriceFirst}"></p>
+				    		</div>
+		    			</article>
+		    		</section>
+		    		<section class="hSection2">
+		    			<section class="secSubsec1" th:each="offer: ${offers}">
+		    				<article class="sub1">
+			    				<div class="photoSec">
+					    			<p th:text="${imageSecond1}">
+					    		</div>
+					    		<div class="description">
+				    				<p th:text="${descriptionSecond1}"></p>
+					    		</div>
+					    		<div class="authorSec">
+					    			<p th:text="${authorSecond1}"></p>
+					    		</div>
+					    		<div class="offPrice">
+					    			<p th:text="${offPriceSecond1}"></p>
+					    			<img src="img/OffApp_LOGO.png">
+					    		</div>
+					    		<div class="origPrice">
+					    			<p class="" th:text="${origPriceSecond1}"></p>
+					    		</div>
+		    				</article>
+		    			</section>
+		    			<section class="secSubsec2" th:each="offer: ${offers}">
+		    				<article class="sub2">
+		    					<div class="photoSec">
+					    			<p th:text="${imageSecond2}">
+					    		</div>
+					    		<div class="description">
+				    				<p th:text="${descriptionSecond2}"></p>
+					    		</div>
+					    		<div class="authorSec">
+					    			<p th:text="${authorSecond2}"></p>
+					    		</div>
+					    		<div class="offPrice">
+					    			<p th:text="${offPriceSecond2}"></p>
+					    			<img src="img/OffApp_LOGO.png">
+					    		</div>
+					    		<div class="origPrice">
+					    			<p class="" th:text="${origPriceSecond2}"></p>
+					    		</div>
+		    				</article>
+		    			</section>
+		    		</section>
+		    	</section>
+		    	<section class="headerSection">
+		    		<section class="show3Off" th:each="offer: ${offers}">
+				    	<article class="show2HProduct">
+				    		<div class="photoSec">
+					    		<p th:text="${imageThird1}">
+					    	</div>
+					    	<div class="description">
+				    			<p th:text="${descriptionThird1}"></p>
+					    	</div>
+					    	<div class="authorSec">
+					   			<p th:text="${authorThird1}"></p>
+					   		</div>
+					   		<div class="offPrice">
+					   			<p th:text="${offPriceThird1}"></p>
+					   			<img src="img/OffApp_LOGO.png">
+					   		</div>
+					   		<div class="origPrice">
+					   			<p class="" th:text="${origPriceThird1}"></p>
+					   		</div>
+				    	</article>
+				    	<article class="show2HProduct">
+				    		<div class="photoSec">
+					    		<p th:text="${imageThird2}">
+					    	</div>
+					    	<div class="description">
+				    			<p th:text="${descriptionThird2}"></p>
+					    	</div>
+					    	<div class="authorSec">
+					   			<p th:text="${authorThird2}"></p>
+					   		</div>
+					   		<div class="offPrice">
+					   			<p th:text="${offPriceThird2}"></p>
+					   			<img src="img/OffApp_LOGO.png">
+					   		</div>
+					   		<div class="origPrice">
+					   			<p class="" th:text="${offer.origPriceThird2}"></p>
+					   		</div>
+				    	</article>
+				    	<article class="show2HProduct">
+				    		<div class="photoSec">
+					    		<p th:text="${imageThird3}">
+					    	</div>
+					    	<div class="description">
+				    			<p th:text="${descriptionThird3}"></p>
+					    	</div>
+					    	<div class="authorSec">
+					   			<p th:text="${authorThird3}"></p>
+					   		</div>
+					   		<div class="offPrice">
+					   			<p th:text="${offPriceThird3}"></p>
+					   			<img src="img/OffApp_LOGO.png">
+					   		</div>
+					   		<div class="origPrice">
+					   			<p class="" th:text="${origPriceThird3}"></p>
+					   		</div>
+				    	</article>
+			    	</section>
+		    	</section>
+		    </section>
+		    <section class="offContainer" >
+		    	<section class="offSector">
+		    		<section class="showOff" th:each="offer: ${offers}">
+				    	<article class="showProduct">
+				    		<div class="photoSec">
+				    			<p th:text="${image}">
+				    		</div>
+				    		<div class="description">
+			    				<p th:text="${description}"></p>
+				    		</div>
+				    		<div class="authorSec">
+				    			<p th:text="${author}"></p>
+				    		</div>
+				    		<div class="offPrice">
+				    			<p th:text="${offPrice}"></p>
+				    			<img src="img/TenPer.jpg">
+				    		</div>
+				    		<div class="origPrice">
+				    			<p class="" th:text="${origPrice}"></p>
+				    		</div>
+				    	</article>
+			    	</section>
+		    	</section>
+		    </section>
+	    </div>
+    </div>
     <footer>
+    
+    </footer>
   </body>
 </html>

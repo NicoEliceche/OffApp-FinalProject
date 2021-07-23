@@ -8,5 +8,4 @@ import com.offapp.webapp.model.Offer;
 @Repository
 public interface OfferRepository extends JpaRepository<Offer, Long> {
 
-	
 }

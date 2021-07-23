@@ -1,11 +1,10 @@
 package com.offapp.webapp.controller;
 
-import java.math.BigDecimal;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,25 +17,30 @@ import com.offapp.webapp.service.OfferService;
 @RequestMapping ("/offer")
 public class OfferController {
 
-	@Autowired
 	private OfferService offerService;
-	
-	@RequestMapping ("/list")
-	public List<Offer> listOffers() {
-		return offerService.listOffers();
+
+	@Autowired
+	public OfferController(OfferService offerService) {
+		this.offerService = offerService;
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.GET)
-	public String createOffer(Model model) {
+	@GetMapping (value = "/almacen")
+	public String listOffers(Model model) {
+		model.addAttribute("offers", offerService.listOffers("Almacen"));
+		return "offerList";
+	}
+	
+	@RequestMapping (value = "/new", method = RequestMethod.GET)
+	public String newOffer(Model model) {
 		model.addAttribute("offer", new Offer());
 		return "newOffer";
 	}
 	
 	@PostMapping(value = "/create")
-	public String createOffer(@RequestParam(value = "author") String author, 
+	public String createOffer(@RequestParam(value = "author") String author,
 			@RequestParam(value = "description") String description, 
-			@RequestParam(value = "offPrice") BigDecimal offPrice, 
-			@RequestParam(value = "origPrice") BigDecimal origPrice, Model model) {
+			@RequestParam(value = "offPrice") Double offPrice, 
+			@RequestParam(value = "origPrice") Double origPrice, Model model) {
 
 		Offer offer = new Offer();
 		offer.setAuthor(author);
@@ -48,7 +52,9 @@ public class OfferController {
 		
 		model.addAttribute("offer", offer);
 		System.out.println(String.format("Se creó la oferta con id: %s", offer.getId()));
-		return "redirect:/";
+		return "redirect:/offer/new";
 	}
 	
+	
+
 }

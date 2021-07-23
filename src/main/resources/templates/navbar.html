@@ -1,0 +1,100 @@
+<div th:fragment="navbar">
+	<navheader>
+      <div class="logo">
+        <img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navPlace" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown itemBar">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/img/deployable-yellow.png" name="Menu"/>
+                </a>
+<!--                 <ul class="dropdown-menu"> -->
+<!--                   <form id="navform" action="/action_page.php"> -->
+<!--                     <input type="radio" id="locat1" name="locat" value="selfLocation"> -->
+<!--                     <label class="navlabel" for="locat1">Usar mi ubicaci&oacute;n</label><br> -->
+<!--                     <input type="radio" id="locat2" name="locat" value="selectLocation"> -->
+<!--                     <label class="navlabel" for="locat2">Elegir ubicaci&oacute;n</label> -->
+<!--                   </form> -->
+<!--                   <li><hr></li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link" id="itemDropdown" data-bs-toggle="dropdown" aria-expanded="false">Almac&eacute;n -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">Arroz</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Verduler&iacute;a -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">Manzana</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ferreter&iacute;a -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">Martillos</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Carnicer&iacute;a -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">Cortes de carne</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Art&iacute;culos de Limpieza -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">Lavandina</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                   <li class="nav-item dropdown"> -->
+<!--                     <a class="nav-link dropdown-toggle" href="#" id="itemDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">NextAdded -->
+<!--                     </a> -->
+<!--                     <ul> -->
+<!--                       <li><a class="dropdown-item" href="#">NextAdded</a></li> -->
+<!--                     </ul> -->
+<!--                   </li> -->
+<!--                 </ul> -->
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/friend_businesses}">Comercios amigos</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/alert/new}">Crea tu alerta</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/contact}">Contacto</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/social_media}">Redes sociales</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/about_us}">Nosotros</a>
+              </li>
+              <li class="nav-item itemBar">
+              	<a class="nav-link" th:href="@{/offer/new}">Crear nueva oferta</a>
+              </li>
+            </ul>
+            <form id="searchPlace">
+              <div id="sP1">
+                <input id ="searchBar" type="search" placeholder="Buscar..." >
+              </div>
+              <div id="sP2">
+                <button id="searchButton" type="submit"><img src="/img/search-yellow.png"/></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </navheader>
+</div>

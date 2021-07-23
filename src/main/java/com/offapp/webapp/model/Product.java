@@ -22,8 +22,6 @@ public class Product extends Type implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private static final String TIPO = "Product";
 	
-	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id;
+
 
 }
