@@ -58,44 +58,40 @@
                   <li>
                     <a href="#" id="itemDropdown">Carnicer&iacute;a
                     </a>
-                    <ul>
                   </li>
                   <li>
                     <a  href="#" id="itemDropdown">Art&iacute;culos de Limpieza
                     </a>
                   </li>
-                  <li>
-                    <a href="#">NextAdded
-                    </a>
-                  </li>
-                </ul>
+              </ul>
 	    </div>
+	    <div>
 		    <section class="offContainer" >
 		    	<section class="offSector">
 		    		<section class="showOff" th:each="offer: ${offers}">
-				    	<article class="showProduct">
+				    	<article th:if="${type != null}" class="showProduct">
 				    		<div class="photoSec">
-				    			<p th:text="${image}">
+				    			<p th:text="${offer.image}">
 				    		</div>
 				    		<div class="description">
-			    				<p th:text="${description}"></p>
+			    				<p th:text="${offer.description}"></p>
 				    		</div>
 				    		<div class="authorSec">
-				    			<p th:text="${author}"></p>
+				    			<p th:text="${offer.author}"></p>
 				    		</div>
 				    		<div class="offPrice">
-				    			<p th:text="${offPrice}"></p>
+				    			<p th:text="${offer.offPrice}"></p>
 				    			<img src="img/TenPer.jpg">
 				    		</div>
 				    		<div class="origPrice">
-				    			<p class="" th:text="${origPrice}"></p>
+				    			<p class="" th:text="${offer.origPrice}"></p>
 				    		</div>
 				    	</article>
 			    	</section>
 		    	</section>
 		    </section>
 	    </div>
-    </div>
+	  </div>
     <footer>
     
     </footer>

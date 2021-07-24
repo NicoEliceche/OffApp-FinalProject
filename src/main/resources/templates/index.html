@@ -35,101 +35,69 @@
 	<header th:insert="navbar.html :: navbar"></header>
     <div class="content">
 	    <div class="menu-container">
-	    	<ul class="menu-list">
-                  <form id="navform" action="/action_page.php">
-                    <input type="radio" id="locat1" name="locat" value="selfLocation">
-                    <label class="navlabel" for="locat1">Usar mi ubicaci&oacute;n</label><br>
-                    <input type="radio" id="locat2" name="locat" value="selectLocation">
-                    <label class="navlabel" for="locat2">Elegir ubicaci&oacute;n</label>
-                  </form>
-                  <hr>
-                  <li>
-                    <a th:href="@{/offer/almacen}" id="itemDropdown">Almac&eacute;n
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#" id="itemDropdown">Verduler&iacute;a
-                    </a>
-                  </li>
-                  <li >
-                    <a href="#" id="itemDropdown">Ferreter&iacute;a
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" id="itemDropdown">Carnicer&iacute;a
-                    </a>
-                  </li>
-                  <li>
-                    <a  href="#" id="itemDropdown">Art&iacute;culos de Limpieza
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">NextAdded
-                    </a>
-                  </li>
-                </ul>
+	    	<ul th:insert="menu.html :: menu"></ul>
 	    </div>
 	    <div class="offPlace">
 		    <section class="offHeader">
 		    	<section class="headerSection">
 		    		<section class="hSection1" th:each="offer: ${offers}">
-		    			<article class="hSec1Prod">
+		    			<article th:if="${offer.top == 1}" class="hSec1Prod">
 		    				<div class="photoSec">
-				    			<p th:text="${imageFirst}">
+				    			<img th:src="${offer.image}" alt="image" name="image" />
 				    		</div>
 				    		<div class="description">
-			    				<p th:text="${descriptionFirst}"></p>
+			    				<p th:text="${offer.description}"></p>
 				    		</div>
 				    		<div class="authorSec">
-				    			<p th:text="${authorFirst}"></p>
+				    			<p th:text="${offer.author}"></p>
 				    		</div>
 				    		<div class="offPrice">
-				    			<p th:text="${offPriceFirst}"></p>
-				    			<img src="img/OffApp_LOGO.png">
+				    			<p th:text="${offer.offPrice}"></p>
+				    			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 				    		</div>
 				    		<div class="origPrice">
-				    			<p class="" th:text="${origPriceFirst}"></p>
+				    			<p class="" th:text="${offer.origPrice}"></p>
 				    		</div>
 		    			</article>
 		    		</section>
 		    		<section class="hSection2">
 		    			<section class="secSubsec1" th:each="offer: ${offers}">
-		    				<article class="sub1">
+		    				<article th:if="${offer.top == 21}" class="sub1">
 			    				<div class="photoSec">
-					    			<p th:text="${imageSecond1}">
+					    			<img th:src="${offer.image}" alt="image" name="image" />
 					    		</div>
 					    		<div class="description">
-				    				<p th:text="${descriptionSecond1}"></p>
+				    				<p th:text="${offer.description}"></p>
 					    		</div>
 					    		<div class="authorSec">
-					    			<p th:text="${authorSecond1}"></p>
+					    			<p th:text="${offer.author}"></p>
 					    		</div>
 					    		<div class="offPrice">
-					    			<p th:text="${offPriceSecond1}"></p>
-					    			<img src="img/OffApp_LOGO.png">
+					    			<p th:text="${offer.offPrice}"></p>
+					    			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 					    		</div>
 					    		<div class="origPrice">
-					    			<p class="" th:text="${origPriceSecond1}"></p>
+					    			<p class="" th:text="${offer.origPrice}"></p>
 					    		</div>
 		    				</article>
 		    			</section>
 		    			<section class="secSubsec2" th:each="offer: ${offers}">
-		    				<article class="sub2">
+		    				<article th:if="${offer.top == 22}" class="sub2">
 		    					<div class="photoSec">
-					    			<p th:text="${imageSecond2}">
+					    			<img th:src="${offer.image}" alt="image" name="image" />
 					    		</div>
 					    		<div class="description">
-				    				<p th:text="${descriptionSecond2}"></p>
+				    				<p th:text="${offer.description}"></p>
 					    		</div>
 					    		<div class="authorSec">
-					    			<p th:text="${authorSecond2}"></p>
+					    			<p th:text="${offer.author}"></p>
 					    		</div>
 					    		<div class="offPrice">
-					    			<p th:text="${offPriceSecond2}"></p>
-					    			<img src="img/OffApp_LOGO.png">
+					    			<p th:text="${offer.offPrice}"></p>
+					    			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 					    		</div>
 					    		<div class="origPrice">
-					    			<p class="" th:text="${origPriceSecond2}"></p>
+					    			<p class="" th:text="${offer.origPrice}"></p>
 					    		</div>
 		    				</article>
 		    			</section>
@@ -137,58 +105,58 @@
 		    	</section>
 		    	<section class="headerSection">
 		    		<section class="show3Off" th:each="offer: ${offers}">
-				    	<article class="show2HProduct">
+				    	<article th:if="${offer.top == 31}" class="show2HProduct">
 				    		<div class="photoSec">
-					    		<p th:text="${imageThird1}">
+					    		<img th:src="${offer.image}" alt="image" name="image" />
 					    	</div>
 					    	<div class="description">
-				    			<p th:text="${descriptionThird1}"></p>
+				    			<p th:text="${offer.description}"></p>
 					    	</div>
 					    	<div class="authorSec">
-					   			<p th:text="${authorThird1}"></p>
+					   			<p th:text="${offer.author}"></p>
 					   		</div>
 					   		<div class="offPrice">
-					   			<p th:text="${offPriceThird1}"></p>
-					   			<img src="img/OffApp_LOGO.png">
+					   			<p th:text="${offer.offPrice}"></p>
+					   			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 					   		</div>
 					   		<div class="origPrice">
-					   			<p class="" th:text="${origPriceThird1}"></p>
+					   			<p class="" th:text="${offer.origPrice}"></p>
 					   		</div>
 				    	</article>
-				    	<article class="show2HProduct">
+				    	<article th:if="${offer.top == 32}" class="show2HProduct">
 				    		<div class="photoSec">
-					    		<p th:text="${imageThird2}">
+					    		<img th:src="${offer.image}" alt="image" name="image" />
 					    	</div>
 					    	<div class="description">
-				    			<p th:text="${descriptionThird2}"></p>
+				    			<p th:text="${offer.description}"></p>
 					    	</div>
 					    	<div class="authorSec">
-					   			<p th:text="${authorThird2}"></p>
+					   			<p th:text="${offer.author}"></p>
 					   		</div>
 					   		<div class="offPrice">
-					   			<p th:text="${offPriceThird2}"></p>
-					   			<img src="img/OffApp_LOGO.png">
+					   			<p th:text="${offer.offPrice}"></p>
+					   			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 					   		</div>
 					   		<div class="origPrice">
-					   			<p class="" th:text="${offer.origPriceThird2}"></p>
+					   			<p class="" th:text="${offer.origPrice}"></p>
 					   		</div>
 				    	</article>
-				    	<article class="show2HProduct">
+				    	<article th:if="${offer.top == 33}" class="show2HProduct">
 				    		<div class="photoSec">
-					    		<p th:text="${imageThird3}">
+					    		<img th:src="${offer.image}" alt="image" name="image" />
 					    	</div>
 					    	<div class="description">
-				    			<p th:text="${descriptionThird3}"></p>
+				    			<p th:text="${offer.description}"></p>
 					    	</div>
 					    	<div class="authorSec">
-					   			<p th:text="${authorThird3}"></p>
+					   			<p th:text="${offer.author}"></p>
 					   		</div>
 					   		<div class="offPrice">
-					   			<p th:text="${offPriceThird3}"></p>
-					   			<img src="img/OffApp_LOGO.png">
+					   			<p th:text="${offer.offPrice}"></p>
+					   			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 					   		</div>
 					   		<div class="origPrice">
-					   			<p class="" th:text="${origPriceThird3}"></p>
+					   			<p class="" th:text="${offer.origPrice}"></p>
 					   		</div>
 				    	</article>
 			    	</section>
@@ -197,22 +165,22 @@
 		    <section class="offContainer" >
 		    	<section class="offSector">
 		    		<section class="showOff" th:each="offer: ${offers}">
-				    	<article class="showProduct">
+				    	<article th:if="${offer.top == 0}" class="showProduct">
 				    		<div class="photoSec">
-				    			<p th:text="${image}">
+				    			<img th:src="${offer.image}" alt="image" name="image" />
 				    		</div>
 				    		<div class="description">
-			    				<p th:text="${description}"></p>
+			    				<p th:text="${offer.description}"></p>
 				    		</div>
 				    		<div class="authorSec">
-				    			<p th:text="${author}"></p>
+				    			<p th:text="${offer.author}"></p>
 				    		</div>
 				    		<div class="offPrice">
-				    			<p th:text="${offPrice}"></p>
-				    			<img src="img/TenPer.jpg">
+				    			<p th:text="${offer.offPrice}"></p>
+				    			<img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
 				    		</div>
 				    		<div class="origPrice">
-				    			<p class="" th:text="${origPrice}"></p>
+				    			<p class="" th:text="${offer.origPrice}"></p>
 				    		</div>
 				    	</article>
 			    	</section>

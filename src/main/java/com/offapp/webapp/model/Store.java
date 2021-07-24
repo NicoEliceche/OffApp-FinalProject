@@ -25,7 +25,6 @@ public class Store{
 	private String name;
 	private String address;
 	private String contact;
-	private Boolean enabled;
 	private Integer lat;
 	private Integer len;
 	

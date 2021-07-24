@@ -3,16 +3,15 @@ package com.offapp.webapp.init;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
-import com.offapp.webapp.model.Product;
-import com.offapp.webapp.repository.ProductRepository;
+import com.offapp.webapp.repository.OfferRepository;
 
 @Component
 public class DataLoader {
 
-	private ProductRepository productRepository;
+	private OfferRepository offerRepository;
 	
-	public DataLoader(ProductRepository productRepository) {
-		this.productRepository = productRepository;
+	public DataLoader(OfferRepository offerRepository) {
+		this.offerRepository = offerRepository;
 	}
 	
 	public void run (ApplicationArguments args) {

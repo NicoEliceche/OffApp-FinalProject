@@ -30,14 +30,8 @@ public class OfferService {
 	
 	public List<Offer> listOffers(String type) {
 		List<Offer> offer = new ArrayList<Offer>();
-	    for (Offer o : offerRepository.findAll()) {
-	         if (type.equals(o.getType()))
-	       	  offer.add(o);
-	    }
-	    if (offer.isEmpty())
-	    	return null;
-	     else	
-	    	return offer;
+		offer = offerRepository.findByTypeIgnoreCase(type);
+	    return offer;
 	}
 	
 }

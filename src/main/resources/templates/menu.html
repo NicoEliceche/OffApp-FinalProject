@@ -1,0 +1,31 @@
+<div th:fragment="menu">
+	<ul class="menu-list">
+		<form id="navform" action="/action_page.php">
+			<input type="radio" id="locat1" name="locat" value="selfLocation">
+			<label class="navlabel" for="locat1">Usar mi ubicaci&oacute;n</label><br>
+			<input type="radio" id="locat2" name="locat" value="selectLocation">
+			<label class="navlabel" for="locat2">Elegir ubicaci&oacute;n</label>
+		</form>
+		<hr>
+		<li>
+			<a th:href="@{/offer/tipo/almacen}" id="itemDropdown">Almac&eacute;n
+			</a>
+		</li>
+		<li >
+			<a th:href="@{/offer/tipo/verduleria}" id="itemDropdown">Verduler&iacute;a
+			</a>
+		</li>
+		<li >
+			<a th:href="@{/offer/tipo/ferreteria}" id="itemDropdown">Ferreter&iacute;a
+			</a>
+		</li>
+		<li>
+			<a th:href="@{/offer/tipo/carniceria}" id="itemDropdown">Carnicer&iacute;a
+			</a>
+		</li>
+		<li>
+			<a  th:href="@{/offer/tipo/artLimpieza}" id="itemDropdown">Art&iacute;culos de Limpieza
+			</a>
+		</li>
+	</ul>
+</div>

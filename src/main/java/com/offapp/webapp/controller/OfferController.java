@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,9 +25,9 @@ public class OfferController {
 		this.offerService = offerService;
 	}
 	
-	@GetMapping (value = "/almacen")
-	public String listOffers(Model model) {
-		model.addAttribute("offers", offerService.listOffers("Almacen"));
+	@GetMapping (value = "/tipo/{type}")
+	public String listOffers(@PathVariable(value = "type") String type, Model model) {
+		model.addAttribute("offers", offerService.listOffers(type));
 		return "offerList";
 	}
 	
@@ -37,12 +38,18 @@ public class OfferController {
 	}
 	
 	@PostMapping(value = "/create")
-	public String createOffer(@RequestParam(value = "author") String author,
+	public String createOffer(@RequestParam(value = "top") Integer top,
+			@RequestParam(value = "type") String type,
+			@RequestParam(value = "image") String image,
+			@RequestParam(value = "author") String author,
 			@RequestParam(value = "description") String description, 
 			@RequestParam(value = "offPrice") Double offPrice, 
 			@RequestParam(value = "origPrice") Double origPrice, Model model) {
 
 		Offer offer = new Offer();
+		offer.setTop(top);
+		offer.setType(type);
+		offer.setImage(image);
 		offer.setAuthor(author);
 		offer.setDescription(description);
 		offer.setOffPrice(offPrice);

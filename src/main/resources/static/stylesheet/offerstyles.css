@@ -12,7 +12,7 @@ h3 {
 	text-align: center;
 }
 
-form {
+.offForm {
 	border: 2px solid #000000;
 	border-radius: 99px 99px 99px 99px;
 	text-align: center;
@@ -20,25 +20,19 @@ form {
 	font-size: 20px;
 	font-weight: 900;
 	padding-bottom: 15px;
+	background-color: #ffff00;
+}
+
+select {
+	border-radius: 30px;
+}
+
+option {
+	border-radius: 30px;
 }
 
 input {
 	width: 80%;
-}
-
-.checkInput1 {
-	width: 15px;
-	height: 15px;
-	position: relative;
-	top: 1px;
-}
-
-.checkInput2 {
-	width: 15px;
-	height: 15px;
-	position: relative;
-	top: 1px;
-	left: 5px;
 }
 
 hr {
