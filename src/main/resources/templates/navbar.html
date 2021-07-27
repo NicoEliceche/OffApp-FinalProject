@@ -34,14 +34,14 @@
               	<a class="nav-link" th:href="@{/offer/new}">Crear nueva oferta</a>
               </li>
             </ul>
-            <form id="searchPlace">
-              <div id="sP1">
-                <input id ="searchBar" type="search" placeholder="Buscar..." >
-              </div>
-              <div id="sP2">
-                <button id="searchButton" type="submit"><img src="/img/search-yellow.png"/></button>
-              </div>
-            </form>
+<!--             <form id="searchPlace" th:action="@{/offer/search}" method="post" th:object=${offer}> -->
+<!--               <div id="sP1"> -->
+<!--                 <input id="sBar" name="sBar" type="text" placeholder="Buscar productos y servicios..." th:field="*{search}" > -->
+<!--               </div> -->
+<!--               <div id="sP2"> -->
+<!--                 <button id="searchButton" type="submit"><img src="/img/search-yellow.png"/></button> -->
+<!--               </div> -->
+<!--             </form> -->
           </div>
         </div>
       </nav>

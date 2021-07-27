@@ -14,7 +14,6 @@ public class OfferService {
 
 	private final OfferRepository offerRepository;
 
-
 	@Autowired
 	public OfferService(OfferRepository offerRepository) {
 		this.offerRepository = offerRepository;
@@ -32,6 +31,18 @@ public class OfferService {
 		List<Offer> offer = new ArrayList<Offer>();
 		offer = offerRepository.findByTypeIgnoreCase(type);
 	    return offer;
+	}
+	
+	public Offer findOfferById(Long id) {
+		return offerRepository.findOfferById(id);
+	}
+	
+	public List<Offer> sBar (String search) {
+		return offerRepository.findAllByMatchers(search);
+	}
+	
+	public void deleteById(Offer offer) {
+		offerRepository.deleteById(offer.getId());
 	}
 	
 }

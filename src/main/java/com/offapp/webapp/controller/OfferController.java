@@ -1,6 +1,8 @@
 package com.offapp.webapp.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +27,7 @@ public class OfferController {
 		this.offerService = offerService;
 	}
 	
-	@GetMapping (value = "/tipo/{type}")
+	@GetMapping (value = "/type/{type}")
 	public String listOffers(@PathVariable(value = "type") String type, Model model) {
 		model.addAttribute("offers", offerService.listOffers(type));
 		return "offerList";
@@ -62,6 +64,18 @@ public class OfferController {
 		return "redirect:/offer/new";
 	}
 	
+	@PostMapping(value = "/search")
+	public String searchOffer(@RequestParam(value = "search") String search, Model model) {
+		List<Offer> searchRes = offerService.sBar(search);
+		model.addAttribute("offer", searchRes);
+		return "searchRes";
+	}
 	
+	@RequestMapping(value = "/del/{id}", method = RequestMethod.GET)
+	public String deleteOffer(@PathVariable(value = "id") Long id, Model model) {
+		Offer offer = offerService.findOfferById(id);
+		offerService.deleteById(offer);
+		return "redirect:/";
+	}
 
 }

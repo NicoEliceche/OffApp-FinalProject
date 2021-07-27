@@ -7,34 +7,17 @@
 .content {
 	display: flex;
 	flex-direction: row;
-	width: 100vw;
-}
-
-.menu-container {
-	font-family: arial;
-	font-size: 20px;
-	width: 20%;
 	height: 100%;
-	display: relative;
-	left: 0px;
-	background-color: black;
-	height: 100%;
+	width: 100%;
 }
 
-.menu-list{
-	list-style: none;
-}
-
-.menu-list li a{
-	color: #ffff00;
-	text-decoration: none;
-	font-size: 20px;
+.offPlace {
+	width: 100%;
 }
 
 .offHeader {
 	height: 600px;
 	width: 100%;
-	margin: 0px 35px 35px 0px;
 	display: flex;
 	flex-direction: column;
 }
@@ -44,28 +27,19 @@
 	flex-direction: row;
 	height: 50%;
 	width: 100%;
-	margin: 10px 0px 10px 0px;
-	padding-bottom: 40px;
-}
-
-
-.offPlace {
-	width: 80%;
+	margin: 10px 0px 15px -20px;
 }
 
 .hSection1 {
 	height: 100%;
 	width: 50%;
-	margin: 10px 0px 10px 0px;
-	padding-left: 25px;
-	padding-right: 30px;
+	margin: 0px 10px 0px 0px;
 }
 
 .hSec1Prod {
 	height: 100%;
 	width: 100%;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-	margin: 10px 10px 10px 10px
 }
 
 .hSection2 {
@@ -73,38 +47,66 @@
 	flex-direction: column;
 	height: 100%;
 	width: 50%;
+	margin: 0px 0px 0px 10px;
 }
 
 .secSubsec1 {
 	height: 50%;
 	width: 100%;
-	padding-bottom: 5px;
+	padding: 0px 0px 5px 0px;
 }
 
 .sub1 {
 	height: 100%;
 	width: 100%;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-	margin: 19px 10px 0px 10px;
 }
 
 .secSubsec2 {
 	height: 50%;
 	width: 100%;
-	padding-top: 5px;
+	padding: 5px 0px 0px 0px;
 }
 
 .sub2 {
 	height: 100%;
 	width: 100%;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-	margin: 20px 10px 10px 10px
 }
 
-.show2HProduct {
+.top3 {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.top31 {
 	height: 100%;
 	width: 33%;
-	margin: 0px 45px 0px 45px;
+	display: flex;
+	flex-direction: row;
+	color: white;
+}
+
+.top32 {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	flex-direction: row;
+	color: white;
+}
+
+.top33 {
+	height: 100%;
+	width: 33%;
+	display: flex;
+	flex-direction: row;
+	color: white;
+}
+
+.show3HProduct {
+	height: 100%;
+	width: 100%;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 }
 
@@ -123,27 +125,15 @@
 .showOff {
 	height: 100%;
 	width: 12%;
-	margin: 0px 3% 0px 0px;
 }
 
-.show3Off {
-	height: 100%;
-	width: 100%;
-	margin: 25px 35px 60px 0px;
-	display: flex;
-	flex-direction: row;
-	color: white;
-	padding-bottom: 40px;
-}
 
 .showProduct {
 	height: 100%;
 	width: 200px;
-	margin: 0px 45px 0px 45px;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 	display: flex;
 	flex-direction: column;
-	padding: 5px 15px 10px 5px;
 }
 
 .photoSec {
@@ -160,7 +150,6 @@
 .description {
 	height: 10%;
 	width: 100%;
-	margin: 5px;
 	text-align: center;
 	font-family: arial;
 	font-size: 0.9vw;
@@ -170,8 +159,6 @@
 .authorSec {
 	height: 10%;
 	width: 100%;
-	margin: 5px;
-	padding-top: 10px;
 	text-align: center;
 	font-family: arial;
 }
@@ -179,7 +166,6 @@
 .offPrice {
 	height: 10%;
 	width: 100%;
-	margin: 5px;
 	display: flex;
 	flex-direction: row;
 }
@@ -187,15 +173,11 @@
 .offPrice img{
 	height: 30px;
 	width: 30px;
-	position: relative;
-	bottom: 5px;
 }
 
 .origPrice {
 	height: 10%;
 	width: 100%;
-	margin: 5px;
-	padding-bottom: 40px;
 	display: flex;
 	flex-direction: row;
 	text-align: center;

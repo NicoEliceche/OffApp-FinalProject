@@ -33,5 +33,6 @@ public class Offer implements Serializable{
 	private Double origPrice;
 //	private Boolean enabled = Boolean.TRUE;
 	private String image;
+	private String search;
 	
 }
