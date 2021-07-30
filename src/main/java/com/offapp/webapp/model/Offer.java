@@ -34,5 +34,6 @@ public class Offer implements Serializable{
 //	private Boolean enabled = Boolean.TRUE;
 	private String image;
 	private String search;
+	private Boolean deleted = false;
 	
 }

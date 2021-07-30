@@ -1,0 +1,116 @@
+<!-- HEADER AND NAVBAR FRAGMENT -->
+<div th:fragment="navbar">
+	<header>
+      <div class="shopping">
+      	<img src="/img/shopping.png" alt="shopping" name="shopping" />
+      </div>
+      <div class="logo">
+        <img src="/img/OffApp-LOGO.png" alt="OffAppLOGO" name="OffApp" />
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="navPlace" class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown itemBar">
+<!--                 <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
+<!--                   <img src="/img/deployable-yellow.png" name="Menu"/> -->
+<!--                 </a> -->
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link active" aria-current="page" th:href="@{/}">Inicio</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/friend_businesses}">Comercios amigos</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link disabled" th:href="@{/alert/new}">Crea tu alerta</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/contact}">Contacto</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/social_media}">Redes sociales</a>
+              </li>
+              <li class="nav-item itemBar">
+                <a class="nav-link" th:href="@{/about_us}">Nosotros</a>
+              </li>
+              <li class="nav-item itemBar">
+              	<a class="nav-link" th:href="@{/offer/new}">Crear nueva oferta</a>
+              </li>
+            </ul>
+<!--             <form id="searchPlace" th:action="@{/offer/search}" method="post" th:object=${offer}> -->
+<!--               <div id="sP1"> -->
+<!--                 <input id="sBar" name="sBar" type="text" placeholder="Buscar productos y servicios..." th:field="*{search}" > -->
+<!--               </div> -->
+<!--               <div id="sP2"> -->
+<!--                 <button id="searchButton" type="submit"><img src="/img/search-yellow.png"/></button> -->
+<!--               </div> -->
+<!--             </form> -->
+          </div>
+        </div>
+      </nav>
+    </header>
+</div>
+
+<!-- MENU FRAGMENT -->
+<div th:fragment="menu">
+	<ul class="menu-list">
+		<form id="navform" action="/action_page.php">
+			<input type="radio" id="locat1" name="locat" value="selfLocation">
+			<label class="navlabel" for="locat1">Usar mi ubicaci&oacute;n</label><br>
+			<input type="radio" id="locat2" name="locat" value="selectLocation">
+			<label class="navlabel" for="locat2">Elegir ubicaci&oacute;n</label>
+		</form>
+		<hr>
+		<li>
+			<a th:href="@{/offer/type/almacen}" id="itemDropdown">Almac&eacute;n
+			</a>
+		</li>
+		<li>
+			<a th:href="@{/offer/type/verduleria}" id="itemDropdown">Verduler&iacute;a
+			</a>
+		</li>
+		<li>
+			<a th:href="@{/offer/type/ferreteria}" id="itemDropdown">Ferreter&iacute;a
+			</a>
+		</li>
+		<li>
+			<a th:href="@{/offer/type/carniceria}" id="itemDropdown">Carnicer&iacute;a
+			</a>
+		</li>
+		<li>
+			<a th:href="@{/offer/type/artLimpieza}" id="itemDropdown">Art&iacute;culos de Limpieza
+			</a>
+		</li>
+	</ul>
+</div>
+
+<!-- FOOTER FRAGMENT -->
+<div th:fragment="webFooter">
+	<div class="footerContent">
+		<div class="sec1">
+			<ul>
+				<li><a href="termsConds.html" name="terminsConds" target="_blank">T&eacute;rminos y Condiciones</a></li>
+				<li><a href="privacyPolicy.html" name="privacyPolicy" target="_blank">Pol&iacute;tica de Privacidad</a></li>
+				<li><a href="privacyPolicy.html" name="privacyPolicy" target="_blank">Defensa del Consumidor</a></li>
+			</ul>
+		</div>
+		<div class="sec2">
+			<p>&copy; 2.021 - Copyright C. Nicol&aacute;s Eliceche Diz</p>
+		</div>
+		<div class="sec3">
+			<div class="secRadio"></div>
+				<p>Contacto:</p>
+			<ul>
+				<li><img th:src="@{/img/whatsapp-yellow.png}" alt="wsp" /></li><br>
+				<li><img th:src="@{/img/email-yellow.png}" alt="email" /></li>
+			</ul>
+			<ul>
+				<li class="li1">+54 9 2223426786</li>
+				<li class="li2">nicoelicecheg97@hotmail.com</li>
+				<li class="li3">nicoelicecheg97@gmail.com</li>
+			</ul>
+		</div>
+	</div>
+	<div class="belowFooter"></div>
+</div>

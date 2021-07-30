@@ -5,18 +5,23 @@
 }
 
 .menu-container {
-	font-family: arial;
+	font-family: timesnewroman;
 	font-size: 15px;
+	text-transform: uppercase;
 	width: 15%;
 	height: 100%;
 	position: relative;
+	top: 40px;
 	left: -40px;
 	background-color: black;
 	height: 100%;
+	padding-top: 10px;
 }
 
 .menu-list{
 	list-style: none;
+	position: relative;
+	left: 20px;
 }
 
 .menu-list li a{

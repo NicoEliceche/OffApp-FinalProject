@@ -1,3 +1,8 @@
+/* @font-face { */
+/* 	font-family: FELIXTI; */
+/* 	src:url(fonts/FELIXTI.TTF); */
+/* } */
+
 *, ::after, ::before {
   margin: 0;
   padding: 0;
@@ -12,107 +17,120 @@
 }
 
 .offPlace {
-	width: 100%;
+	width: 85%;
 }
 
 .offHeader {
-	height: 600px;
+	height: 350px;
 	width: 100%;
-	display: flex;
-	flex-direction: column;
+/* 	display: flex; */
+/* 	flex-direction: column; */
+	margin-bottom: 70px;
 }
 
 .headerSection {
 	display: flex;
 	flex-direction: row;
-	height: 50%;
+	height: 100%;
 	width: 100%;
 	margin: 10px 0px 15px -20px;
 }
 
 .hSection1 {
 	height: 100%;
-	width: 50%;
-	margin: 0px 10px 0px 0px;
+	width: 100%;
+	margin: 0px 0px 0px 0px;
 }
 
 .hSec1Prod {
+	background-color: rgba(255, 255, 0, 0.5);
 	height: 100%;
+	max-height: 800px;
 	width: 100%;
+	max-width: 500px;
+	position: relative;
+	left: 20px;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 }
 
-.hSection2 {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	width: 50%;
-	margin: 0px 0px 0px 10px;
-}
+/* .hSection2 { */
+/* 	display: flex; */
+/* 	flex-direction: column; */
+/* 	height: 0%; */
+/* 	width: 50%; */
+/* 	margin: 0px 0px 0px 10px; */
+/* } */
 
-.secSubsec1 {
-	height: 50%;
-	width: 100%;
-	padding: 0px 0px 5px 0px;
-}
+/* .secSubsec1 { */
+/* 	height: 50%; */
+/* 	width: 100%; */
+/* 	padding: 0px 0px 5px 0px; */
+/* } */
 
-.sub1 {
-	height: 100%;
-	width: 100%;
-	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-}
+/* .sub1 { */
+/* 	background-color: rgba(255, 255, 0, 0.5); */
+/* 	height: 100%; */
+/* 	max-height: 800px; */
+/* 	width: 100%; */
+/* 	max-width: 600px; */
+/* 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5); */
+/* } */
 
-.secSubsec2 {
-	height: 50%;
-	width: 100%;
-	padding: 5px 0px 0px 0px;
-}
+/* .secSubsec2 { */
+/* 	height: 50%; */
+/* 	width: 100%; */
+/* 	padding: 5px 0px 0px 0px; */
+/* } */
 
-.sub2 {
-	height: 100%;
-	width: 100%;
-	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-}
+/* .sub2 { */
+/* 	background-color: rgba(255, 255, 0, 0.5); */
+/* 	height: 100%; */
+/* 	max-height: 800px; */
+/* 	width: 100%; */
+/* 	max-width: 600px; */
+/* 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5); */
+/* } */
 
-.top3 {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-}
+/* .top3 { */
+/* 	display: flex; */
+/* 	flex-direction: row; */
+/* 	width: 100%; */
+/* } */
 
-.top31 {
-	height: 100%;
-	width: 33%;
-	display: flex;
-	flex-direction: row;
-	color: white;
-}
+/* .top31 { */
+/* 	height: 100%; */
+/* 	width: 33%; */
+/* 	display: flex; */
+/* 	flex-direction: row; */
+/* } */
 
-.top32 {
-	height: 100%;
-	width: 33%;
-	display: flex;
-	flex-direction: row;
-	color: white;
-}
+/* .top32 { */
+/* 	height: 100%; */
+/* 	width: 33%; */
+/* 	display: flex; */
+/* 	flex-direction: row; */
+/* } */
 
-.top33 {
-	height: 100%;
-	width: 33%;
-	display: flex;
-	flex-direction: row;
-	color: white;
-}
+/* .top33 { */
+/* 	height: 100%; */
+/* 	width: 33%; */
+/* 	display: flex; */
+/* 	flex-direction: row; */
+/* } */
 
-.show3HProduct {
-	height: 100%;
-	width: 100%;
-	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
-}
+/* .show3HProduct { */
+/* 	background-color: rgba(255, 255, 0, 0.5); */
+/* 	height: 80%; */
+/* 	max-height: 500px; */
+/* 	width: 100%; */
+/* 	max-width: 300px; */
+/* 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5); */
+/* } */
 
 .offContainer {
 	height: 1000px;
 	width: 100%;
+	margin-left: -20px;
 }
 
 .offSector {
@@ -125,42 +143,113 @@
 .showOff {
 	height: 100%;
 	width: 12%;
+	margin: 0px 50px 0px 0px;
 }
 
 
 .showProduct {
 	height: 100%;
-	width: 200px;
+	min-height: 100%;
+	max-height: 800px;
+	width: 225px;
+	max-width: 400px;
 	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
 	display: flex;
 	flex-direction: column;
 }
 
-.photoSec {
+/* TOP */
+.photoSecTop {
 	height: 60%;
 	width: 100%;
-	margin: 5px;
 }
 
-.photoSec img {
+.photoSecTop img {
 	height: 100%;
 	width: 100%;
 }
 
-.description {
+.descriptionTop {
 	height: 10%;
 	width: 100%;
 	text-align: center;
-	font-family: arial;
-	font-size: 0.9vw;
-	font-weight: 600;
+	font-family: timesnewroman;
+	text-transform: uppercase;
+	font-size: 1.7vw;
+}
+
+.authorSecTop {
+	height: 10%;
+	width: 100%;
+	text-align: center;
+	font-family: vivaldi;
+	font-size: 1.9vw;
+}
+
+.offPriceTop {
+	height: 10%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	font-family: cursive;
+	font-size: 1.3vw;
+}
+
+.offPriceTop p {
+	position: relative;
+	left: 50px;
+}
+
+.offPriceTop img{
+	height: 8vh;
+	width: 7.5vw;
+	position: relative;
+	left: 299px;
+	bottom: 10px;
+}
+
+.origPriceTop {
+	color: #666666;
+	height: 10%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	font-family: cursive;
+	font-size: 1.1vw;
+	text-decoration: line-through;
+	position: relative;
+	left: 40px;
+}
+
+/* GENERAL */
+
+.photoSec {
+	height: 50%;
+	width: 100%;
+}
+
+.photoSec img {
+	height: 150px;
+	width: 100%;
+}
+
+.description {
+	height: 16%;
+	width: 100%;
+	text-align: center;
+	font-family: timesnewroman;
+	text-transform: uppercase;
+	font-size: 1.2vw;
 }
 
 .authorSec {
-	height: 10%;
+	height: 14%;
 	width: 100%;
 	text-align: center;
-	font-family: arial;
+	font-family: vivaldi;
+	font-size: 1.7vw;
+	font-weight: 900;
 }
 
 .offPrice {
@@ -168,20 +257,64 @@
 	width: 100%;
 	display: flex;
 	flex-direction: row;
+	font-family: cursive;
+	font-size: 1.3vw;
+}
+
+.offPrice p {
+	position: relative;
+	left: 50px;
 }
 
 .offPrice img{
-	height: 30px;
-	width: 30px;
+	height: 8vh;
+	width: 7.5vw;
+	position: relative;
+	left: 26px;
+	bottom: 0px;
 }
 
 .origPrice {
+	color: #666666;
 	height: 10%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	text-align: center;
-	font-family: arial;
+	font-family: cursive;
+	font-size: 1.1vw;
+	text-decoration: line-through;
+	position: relative;
+	left: 40px;
 }
 
-/* -------------------------- */
+.buttonContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.editButton form{
+	width: 80px;
+}
+
+.editButton form button {
+	background-color: #ffff00;
+	height: 100%;
+	width: 80px;
+	font-family: cursive;
+	text-transform: uppercase;
+}
+
+.deleteButton form{
+	position: relative;
+	left: 65px;
+	width: 80px;
+}
+
+.deleteButton form button {
+	background-color: #ffff00;
+	height: 100%;
+	width: 80px;
+	font-family: cursive;
+	text-transform: uppercase;
+}

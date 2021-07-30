@@ -9,8 +9,25 @@ header {
 }
 
 header .logo {
-  margin: 10px;
-  text-align: center;;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.shopping {
+	height: 0.1vh;
+	text-align: center;
+	position: relative;
+	top: 100px;
+}
+
+.shopping img {
+	height: 25vh;
+	width: 100%;
+	opacity: 50%;
+	position: relative;
+	bottom: 100px;
 }
 
 .logo img {
