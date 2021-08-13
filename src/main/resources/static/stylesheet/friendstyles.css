@@ -1,0 +1,121 @@
+*, ::after, ::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	width: 100%;
+}
+
+.storePlace {
+	width: 85%;
+}
+
+.storeContainer {
+	height: 1000px;
+	width: 100%;
+	margin-top: 20px;
+	margin-left: -20px;
+}
+
+.storeSector {
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.showStore {
+	height: 100%;
+	width: 12%;
+	margin: 0px 140px 0px 0px;
+}
+
+
+.showEntity {
+	height: 100%;
+	min-height: 100%;
+	max-height: 800px;
+	width: 275px;
+	max-width: 400px;
+	box-shadow: 0px 5px 15px 8px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+}
+
+.storePhotoSec {
+	height: 40%;
+	width: 100%;
+}
+
+.storePhotoSec img {
+	height: 100%;
+	width: 100%;
+}
+
+.storeName {
+	height: 18%;
+	width: 100%;
+	text-align: center;
+	font-family: timesnewroman;
+	text-transform: uppercase;
+	font-size: 1.3vw;
+	font-weight: 900;
+}
+
+.storeAddress {
+	height: 37%;
+	width: 100%;
+	text-align: center;
+	font-family: cursive;
+	font-size: 1.3vw;
+}
+
+.storeContact {
+	height: 16%;
+	width: 85%;
+	display: flex;
+	flex-direction: row;
+	font-family: cursive;
+	font-size: 1.2vw;
+}
+
+.storeContact p {
+	position: relative;
+	left: 65px;
+}
+
+.storeButtonContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.storeEditButton form{
+	width: 80px;
+}
+
+.storeEditButton form button {
+	background-color: #ffff00;
+	height: 100%;
+	width: 80px;
+	font-family: cursive;
+	text-transform: uppercase;
+}
+
+.storeDeleteButton form{
+	position: relative;
+	left: 115px;
+	width: 80px;
+}
+
+.storeDeleteButton form button {
+	background-color: #ffff00;
+	height: 100%;
+	width: 80px;
+	font-family: cursive;
+	text-transform: uppercase;
+}

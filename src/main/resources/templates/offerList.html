@@ -43,7 +43,7 @@
 		    <section class="offHeader">
 			    <section class="offContainer" >  															
 			    	<section class="offSector" style="margin-top: 19px;">
-			    		<section class="showOff" th:if="${offer.top == 0}" th:each="offer: ${offers}">
+			    		<section class="showOff" th:each="offer: ${offers}">
 					    	<article th:if="${type != null}" class="showProduct">
 					    		<div class="photoSec">
 					    			<img th:src="${offer.image}" alt="image" name="image" />
@@ -63,17 +63,12 @@
 					    		</div>
 					    		<div class="buttonContainer">
 						    		<div class="editButton">
-						    			<form>
-						    				<button type="submit" name="editButton">Editar</button>
-						    			</form>
+										<a th:href="@{|/offer/update/${offer.id}|}">Editar</a>	
 						    		</div>
 						    		<div class="deleteButton">
-						    			<form>
-						    				<button type="submit" name="editButton">Borrar</button>
-						    			</form>
-		<!-- 				    			<form th:action="@{|offer/{offer.id}|}" th:method="delete"><button type="submit">Borrar</button></form> -->
+										<a th:href="@{/offer/delete/{id} (id=${offer.id})}">Borrar</a>
 						    		</div>
-						    	</div>
+					    		</div>
 					    	</article>
 				    	</section>
 			    	</section>

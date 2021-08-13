@@ -25,6 +25,7 @@ public class Store{
 	private String name;
 	private String address;
 	private String contact;
+	private String image;
 	private Integer lat;
 	private Integer len;
 	
@@ -32,23 +33,20 @@ public class Store{
 	List<Category> category = new ArrayList<Category>();
 	
 	@OneToMany
-	List<Store> stores = new ArrayList<Store>();
-	
-	@OneToMany
 	List<Offer> offer = new ArrayList<Offer>();
 
-	public String getAddress() {		
-		StringBuilder sb = new StringBuilder();
-		sb.append("Latitude: " + this.getLat() + "\n");
-		sb.append("Length: " + this.getLen());
-		this.address = sb.toString();
-		return address;
-	}
+//	public String getAddress() {		
+//		StringBuilder sb = new StringBuilder();
+//		sb.append("Latitude: " + this.getLat() + "\n");
+//		sb.append("Length: " + this.getLen());
+//		this.address = sb.toString();
+//		return address;
+//	}
 	
-	public void setAddress(Integer lat, Integer len) {
-		this.lat = lat;
-		this.len = len;
-		System.out.println("Se ha establecido la ubicación para: " + this.getName());
-	}
+//	public void setAddress(Integer lat, Integer len) {
+//		this.lat = lat;
+//		this.len = len;
+//		System.out.println("Se ha establecido la ubicación para: " + this.getName());
+//	}
 	
 }

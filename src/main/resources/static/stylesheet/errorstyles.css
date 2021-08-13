@@ -6,7 +6,10 @@
 
 h3 {
   font-size: 50px;
-  background: -webkit-linear-gradient(#5882FA, #B43104, #0174DF);
+  background: -webkit-linear-gradient(#000000, #ffdd00, #ffff00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 150px;
 }

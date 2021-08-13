@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OffApp</title>
 
@@ -23,54 +23,43 @@
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	
-    <link th:rel="stylesheet" th:href="@{/assets/select2-develop/dist/css/select2.css}"/>
-    <link th:rel="stylesheet" th:href="@{/assets/select2-bootstrap4-theme-master/dist/select2-bootstrap4.css}"/>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css} "/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/stylesheet/indexstyles.css">
     <link rel="stylesheet" type="text/css" href="/stylesheet/navstyles.css">
     <link rel="stylesheet" type="text/css" href="/stylesheet/menustyles.css">
     <link rel="stylesheet" type="text/css" href="/stylesheet/footerstyles.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheet/friendstyles.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheet/storestyles.css">
   </head>
-  <body class="main-content">
-	<header th:replace="fragments :: navbar"></header>
-    <div class="content">
-	    <div class="menu-container">
-	    	<ul th:replace="fragments :: menu"></ul>
-	    </div>
-		<div class="storePlace">
-			<section class="storeContainer">
-				<section class="storeSector">
-					<section class="showStore" th:each="store: ${stores}">
-						<article class="showEntity">
-						    <div class="storePhotoSec">
-								<img th:src="${store.image}" alt="image" name="image" />
-							</div>
-							<div class="storeName">
-							    <p th:text="${store.name}"></p>
-							</div>
-							<div class="storeAddress">
-								<p th:text="${store.address}"></p>
-							</div>
-							<div class="storeContact">
-								<p th:text="${store.contact}"></p>
-							</div>
-					 		<div class="buttonContainer">
- 					    		<div class="editButton">
-									<a th:href="@{|/store/update/${store.id}|}">Editar</a>
-					    		</div>
-					    		<div class="deleteButton">
-									<a th:href="@{/store/delete/{id} (id=${store.id})}">Borrar</a>
-					    		</div>
-					    	</div>
-						</article>
-					</section>
-				</section>
-			</section>
-		</div>
+  <body id="content">
+    <header th:replace="fragments :: navbar"></header>
+    <div class="forms">
+    	<hr>
+	    <h3>Crear nuevo negocio</h3>
+	    <hr>
+	    	<form class="storeForm" th:action="@{/store/save}" method="post" th:object=${store}>
+		    	<div class="PopUpActions">
+		    		<label for="file-input">Imagen:</label><br>
+		    		<input id="file-input" class="PopUpActions-fileInput" type="text" name="files" multiple="" accept=".jpg,.jpeg,.png,.apng,.tiff,.tif" placeholder="Insertar URL..." th:field="*{image}"><br>
+		    	</div>
+		    	<div class="storeName">
+		    		<label for="name">Nombre:</label><br>
+		    		<input type="text" id="name" name="name" placeholder="Insertar nombre..." th:field="*{name}"><br>
+		    	</div>
+		    	<div class="storeAdress">
+		    		<label for="address">Dirección:</label><br>
+		    		<input type="text" id="address" name="address" placeholder="Insertar dirección..." th:field="*{address}"><br>
+		    	</div>
+		    	<div class="storeContact">
+		    		<label for="contact">Contacto:</label><br>
+		    		<input type="text" id="contact" name="contact" placeholder="Instertar contacto..." th:field="*{contact}"><br>
+		    	</div>
+		    	<input name="id" type="hidden" th:value="*{id}">
+		    	<div>
+		    		<button type="submit">Guardar</button>
+		    	</div>
+	       	</form>
 	</div>
+    <hr>
     <footer class="fixed-bottom">
         	<div th:replace="fragments :: webFooter"></div>
     </footer>

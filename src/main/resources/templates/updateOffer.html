@@ -35,7 +35,8 @@
     	<hr>
 	    <h3>Crear nueva oferta</h3>
 	    <hr>
-	    	<form class="offForm" th:action="@{/offer/create}" method="post" th:object=${offer}>
+<!-- 	    	<form class="offForm" th:action="@{/offer/update/{id} (id=${offer.id})}" method="post" th:object=${offer}> -->
+			<form class="offForm" th:action="@{/offer/save}" method="post" th:object=${offer}>
 		    	<div>
 		    		<label for="top">Elige un top: </label>
 		    		<select name="top" th:field="*{top}">
@@ -71,19 +72,20 @@
 		    	<div>
 		    		<label for="description">Descripción:</label><br>
 		    		<input type="text" id="description" name="description" placeholder="Insertar descripción..." th:field="*{description}"><br>
-		    	</div>
-		    	<div>
+		   		</div>
+		   		<div>
 		    		<label for="offPrice">Precio de oferta:</label><br>
 		    		<input type="text" id="offPrice" name="offPrice" placeholder="Instertar precio de oferta..." th:field="*{offPrice}"><br>
 		    	</div>
-		    	<div>
+		 		<div>
 		    		<label for="origPrice">Precio original:</label><br>
 		    		<input type="text" id="origPrice" name="origPrice" placeholder="Insertar precio original..." th:field="*{origPrice}"><br>
-		    	</div>
-		    	<div>
-		    		<button type="submit">Crear</button>
-		    	</div>
-	       	</form>
+				</div>
+		    	<input name="id" type="hidden" th:value="*{id}">
+				<div>
+		    		<button type="submit">Guardar</button>
+				</div>
+		</form>
 	</div>
     <hr>
     <footer th:replace="fragments :: webFooter"></footer>

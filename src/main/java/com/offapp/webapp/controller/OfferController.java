@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.offapp.webapp.model.Offer;
+import com.offapp.webapp.repository.OfferRepository;
 import com.offapp.webapp.service.OfferService;
 
 @Controller
@@ -24,20 +25,22 @@ import com.offapp.webapp.service.OfferService;
 public class OfferController {
 
 	private OfferService offerService;
+	private OfferRepository offerRepository;
 
 	@Autowired
-	public OfferController(OfferService offerService) {
+	public OfferController(OfferService offerService, OfferRepository offerRepository) {
 		this.offerService = offerService;
+		this.offerRepository = offerRepository;
 	}
 	
-	//FILTER OFFER BY TYPE
+	// FILTER OFFER BY TYPE
 	@GetMapping (value = "/type/{type}")
 	public String listOffers(@PathVariable(value = "type") String type, Model model) {
 		model.addAttribute("offers", offerService.listOffers(type));
 		return "offerList";
 	}
 	
-	//REDIRECT TO NEW OFFER FORM
+	// REDIRECT TO NEW OFFER FORM
 	@RequestMapping (value = "/new", method = RequestMethod.GET)
 	public String newOffer(Model model) {
 		model.addAttribute("offer", new Offer());
@@ -70,43 +73,32 @@ public class OfferController {
 		return "redirect:/offer/new";
 	}
 	
-//	// UPDATE OFFER
-//	@PostMapping("/{id}")
-//	public String updateOffer(@PathVariable(name = "id", required = true) Long id, @ModelAttribute(name = "offer") Offer offer) {
-//		Optional<Offer> offerOp = offerService.findOfferById(id);
-//	if (offerOp.isPresent() || offer == null)
-//		return "redirect:/error";
-//		
-//	Offer offerRepo = offerOp.get();
-//	offerRepo.setAuthor(offer.getAuthor());
-//	offerRepo.setDescription(offer.getDescription());
-//	offerRepo.setOffPrice(offer.getOffPrice());
-//	offerRepo.setOrigPrice(offer.getOrigPrice());
-//	offerService.save(offer);
-//	return "redirect:/";
-//	}
-//	
-////	DELETE METHOD
-//	@DeleteMapping("/{id}")
-//	public String deleteOffer(@PathVariable(name = "id", required = true) Long id, Model model) {
-//		Optional<Offer> offerOp = offerService.findOfferById(id);
-//		if (!offerOp.isPresent())
-//			return "redirect:/error";
-//		Offer offer = offerOp.get();
-//		offer.setDelete(true);
-//		offerService.save(offer);
-//		model.addAttribute("offer", offerOp.get());
-//		return "editOffer";
-//	}
-	
-//	@RequestMapping(value = "/del/{id}", method = RequestMethod.GET)
-//	public String delOffer(@PathVariable(value = "id") Long id, Model model) {
-//		Offer offer = offerService.findOfferById(id);
-//		offerService.deleteById(offer);
-//		return "redirect:/";
-//	}
+	// UPDATE OFFER
+	@RequestMapping (value = "/update/{id}", method = RequestMethod.GET)
+	public String updateOffer(@PathVariable(name = "id", required = true) Long id, Model model) {
+		Optional<Offer> offerOp = offerRepository.findById(id);
+		if (!offerOp.isPresent())
+			return "redirect:errorPage";
 
-	//SEARCH OFFER BY MATCHER
+		model.addAttribute("offer", offerOp.get());
+		return "updateOffer";
+	}
+	
+	// SAVE OFFER
+	@PostMapping("/save")
+	public String saveOffer(@Validated Offer offer, Model model) {
+		offerService.save(offer);
+		return "redirect:/";
+	}	
+	
+	// DELETE OFFER
+	@RequestMapping(value= "/delete/{id}", method = RequestMethod.GET)
+	public String deleteOffer(@PathVariable(value = "id") Long id, Model model) {
+		offerService.deleteOfferById(id);
+		return "redirect:/";
+	}
+
+	// SEARCH OFFER BY MATCHER
 	@PostMapping(value = "/search")
 	public String searchOffer(@RequestParam(value = "search") String search, Model model) {
 		List<Offer> searchRes = offerService.sBar(search);

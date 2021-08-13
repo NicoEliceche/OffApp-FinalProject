@@ -61,16 +61,11 @@
 				    			<p th:text="${offer.origPrice}"></p>
 				    		</div>
 				    		<div class="buttonContainer">
-					    		<div class="editButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Editar</button>
-					    			</form>
+ 					    		<div class="editButton">
+									<a th:href="@{|/offer/update/${offer.id}|}">Editar</a>
 					    		</div>
 					    		<div class="deleteButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Borrar</button>
-					    			</form>
-	<!-- 				    			<form th:action="@{|offer/{offer.id}|}" th:method="delete"><button type="submit">Borrar</button></form> -->
+									<a th:href="@{/offer/delete/{id} (id=${offer.id})}">Borrar</a>
 					    		</div>
 					    	</div>
 		    			</article>
@@ -95,15 +90,10 @@
 				    		</div>
 				    		<div class="buttonContainer">
 					    		<div class="editButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Editar</button>
-					    			</form>
+									<a th:href="@{|/offer/update/${offer.id}|}">Editar</a>
 					    		</div>
 					    		<div class="deleteButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Borrar</button>
-					    			</form>
-	<!-- 				    			<form th:action="@{|offer/{offer.id}|}" th:method="delete"><button type="submit">Borrar</button></form> -->
+									<a th:href="@{/offer/delete/{id} (id=${offer.id})}">Borrar</a>
 					    		</div>
 					    	</div>
 		    			</article>
@@ -128,22 +118,17 @@
 				    		</div>
 				    		<div class="buttonContainer">
 					    		<div class="editButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Editar</button>
-					    			</form>
+									<a th:href="@{|/offer/update/${offer.id}|}">Editar</a>
 					    		</div>
 					    		<div class="deleteButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Borrar</button>
-					    			</form>
-	<!-- 				    			<form th:action="@{|offer/{offer.id}|}" th:method="delete"><button type="submit">Borrar</button></form> -->
+									<a th:href="@{/offer/delete/{id} (id=${offer.id})}">Borrar</a>
 					    		</div>
 					    	</div>
 		    			</article>
 		    		</section>
 		    	</section>
 		    </section>
-		    <section class="offContainer" >
+		    <section class="offContainer">
 		    	<section class="offSector">
 		    		<section class="showOff" th:if="${offer.top == 0}" th:each="offer: ${offers}">
 				    	<article class="showProduct">
@@ -165,17 +150,13 @@
 				    		</div>
 				    		<div class="buttonContainer">
 					    		<div class="editButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Editar</button>
-					    			</form>
+									<a th:href="@{|/offer/update/${offer.id}|}">Editar</a>	
 					    		</div>
 					    		<div class="deleteButton">
-					    			<form>
-					    				<button type="submit" name="editButton">Borrar</button>
-					    			</form>
-	<!-- 				    			<form th:action="@{|offer/{offer.id}|}" th:method="delete"><button type="submit">Borrar</button></form> -->
+									<a th:href="@{/offer/delete/{id} (id=${offer.id})}">Borrar</a>
 					    		</div>
 					    	</div>
+					    	
 				    	</article>
 			    	</section>
 		    	</section>

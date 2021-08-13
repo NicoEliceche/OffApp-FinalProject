@@ -8,16 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.offapp.webapp.service.OfferService;
+import com.offapp.webapp.service.StoreService;
 
 @Controller
 @RequestMapping("/")
 public class MainController {
 
 	private final OfferService offerService;
+	private final StoreService storeService;
 	
 	@Autowired
-	public MainController(OfferService offerService) {
+	public MainController(OfferService offerService, StoreService storeService) {
 		this.offerService = offerService;
+		this.storeService = storeService;
 	}
 	
 	@GetMapping
@@ -27,7 +30,8 @@ public class MainController {
 	}
 	
 	@GetMapping(value = "/friend_businesses")
-	public String friend_businesses() {
+	public String friend_businesses(Model model) {
+		model.addAttribute("stores", storeService.listStores());
 		return "friend_businesses";
 	}
 	

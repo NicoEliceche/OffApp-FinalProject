@@ -2,6 +2,7 @@ package com.offapp.webapp.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,10 +20,12 @@ public class OfferService {
 		this.offerRepository = offerRepository;
 	}
 	
+	// SAVE OFFER
 	public Offer save(Offer offer) {
 		return offerRepository.saveAndFlush(offer);
 	}
 	
+	// LIST OFFERS
 	public List<Offer> listOffers() {
 		return offerRepository.findAll();
 	}
@@ -33,16 +36,19 @@ public class OfferService {
 	    return offer;
 	}
 	
-	public Offer findOfferById(Long id) {
-		return offerRepository.findOfferById(id);
+	// UPDATE OFFER
+	public Optional<Offer> getId(Long id) {
+		return offerRepository.findById(id);
 	}
 	
+	// SEARCH BAR
 	public List<Offer> sBar (String search) {
 		return offerRepository.findAllByMatchers(search);
 	}
 	
-	public void deleteById(Offer offer) {
-		offerRepository.deleteById(offer.getId());
+	// DELETE OFFER
+	public void deleteOfferById(Long id) {
+		offerRepository.deleteById(id);
 	}
 	
 }

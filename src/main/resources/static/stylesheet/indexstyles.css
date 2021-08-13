@@ -204,7 +204,7 @@
 	height: 8vh;
 	width: 7.5vw;
 	position: relative;
-	left: 299px;
+	left: 290px;
 	bottom: 10px;
 }
 
@@ -293,28 +293,36 @@
 	flex-direction: row;
 }
 
-.editButton form{
-	width: 80px;
+.editButton {
+	background-color: #ffff00;
+	border: 2px solid #000;
+	height: 28px;
+	width: 75px;
 }
 
-.editButton form button {
-	background-color: #ffff00;
-	height: 100%;
-	width: 80px;
+.editButton a {
+	text-decoration: none;
+	color: #000;
 	font-family: cursive;
 	text-transform: uppercase;
-}
-
-.deleteButton form{
 	position: relative;
-	left: 65px;
-	width: 80px;
+	left: 3px;
+	bottom: 1px;
 }
 
-.deleteButton form button {
+.deleteButton {
 	background-color: #ffff00;
-	height: 100%;
-	width: 80px;
+	border: 2px solid #000;
+	height: 28px;
+	width: 75px;
+}
+
+.deleteButton a {
+	text-decoration: none;
+	color: #000;
 	font-family: cursive;
 	text-transform: uppercase;
+	position: relative;
+	left: 3px;
+	bottom: 1px;
 }

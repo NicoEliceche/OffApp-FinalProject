@@ -31,7 +31,6 @@ public class Offer implements Serializable{
 	private String description;
 	private Double offPrice;
 	private Double origPrice;
-//	private Boolean enabled = Boolean.TRUE;
 	private String image;
 	private String search;
 	private Boolean deleted = false;

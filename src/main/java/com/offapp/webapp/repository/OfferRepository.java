@@ -13,9 +13,6 @@ import com.offapp.webapp.model.Offer;
 public interface OfferRepository extends JpaRepository<Offer, Long> {
 
 	List<Offer> findByTypeIgnoreCase(String type);
-	
-	Offer findOfferById(Long id);
 	@Query("FROM Offer o WHERE ((o.description like '%:matcher%' OR o.description is null))")
 	List<Offer> findAllByMatchers(@Param("matcher") String matcher);
-	
 }
